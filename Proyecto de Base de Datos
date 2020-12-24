@@ -1,0 +1,95 @@
+Nombre de Empresa: E-DATA
+Nombre de Proyecto: E-System y E-system Cloud, 
+Sistema de evaluacion automatica para escuelas, colegios y universisdades
+
+Equipo:
+-------------------------------------------------------------------------------------------------
+Matricula	      Nombre y Apellido	      Email				      Telefono                  Casillas	
+19-miin-1-004	  Felipe A. Delison		Genfote@gmail.com		  8092688452        	    __|__|__|__|__
+--------------------------------------------------------------------------------------------------
+Presentacion del Proyecto:--------------------------------------
+https://es2.slideshare.net/MatLockward/plan-de-empresa-240494137
+----------------------------------------------------------------
+Video:----------------------------------------------------------
+https://youtu.be/YS1qMGx84xw
+----------------------------------------------------------------
+
+Codigo Fuente:---------------------------------------------------
+
+CREATE DATABASE ESYSTEM
+/*INICIO*/
+CREATE TABLE DATOS DE ESTUDIANTE (
+ID CHAR(8) PRIMARY KEY,
+Nombre VARCHAR(40) not null,
+Apellido VARCHAR(40)not null,
+Matricula VARCHAR(14), not null
+Seccion NUMERIC(4),
+Asistencia NUMERIC(2),
+)
+CREATE TABLE CALIFICACIONES FINALES(
+ID CHAR(8) PRIMARY KEY,
+Examen parcial NUMERIC(2),
+Practica NUMERIC(2),
+Examen Final NUMERIC(2),
+Suma Final NUMERIC(2),
+Nota Final CHAR(2),
+)
+CREATE TABLE PROFESORES DE LAS ASIGNATURAS(
+ID CHAR(8) PRIMARY KEY,
+LAB. FISICA II VARCHAR(40),not null
+BASES DE DATOS VARCHAR(40),not null
+FUNDAMENTOS ING. ELECTRONICA VARCHAR(40),
+CALCULO DIFERENCIAL VARCHAR(40),
+FISICA III VARCHAR(40),
+LOGICA DE LAS INVESTIGACIONES VARCHAR(40),
+)
+CREATE TABLE PERIODO ENERO-ABRIL (
+ID CHAR(8) PRIMARY KEY,
+Codigo NUMERIC(40),
+Asignaturas VARCHAR(40),
+Creditos INT(2),
+Seccion INT(4),
+Periodo INT(2),
+Calificacion Final INT(2),
+Total de Creditos INT(2),
+Indice del Cuatrimestre INT(2),
+)
+CREATE TABLE PERIODO MAYO-AGOSTO (
+ID CHAR(8) PRIMARY KEY,
+Codigo NUMERIC(40),
+Asignaturas VARCHAR(40),
+Creditos VARCHAR(14),
+Seccion NUMERIC(4),
+Periodo NUMERIC(2),
+Calificacion Final NUMERIC(2),
+Total de Creditos NUMERIC(2),
+Indice del Cuatrimestre NUMERIC(2),
+)
+CREATE TABLE PERIODO SEPTIEMBRE-DICIEMBRE (
+ID CHAR(8) PRIMARY KEY,
+Codigo NUMERIC(40),
+Asignaturas VARCHAR(40),
+Creditos VARCHAR(14),
+Seccion NUMERIC(4),
+Periodo NUMERIC(2),
+Calificacion Final NUMERIC(2),
+Total de Creditos NUMERIC(2),
+Indice del Cuatrimestre NUMERIC(2),
+)
+CREATE TABLE RESULTADOS DE PERIODOS FINALES
+ID CHAR(8) PRIMARY KEY,
+IDDATOS DE ESTUDIANTE  CHAR(8),
+IDCALIFICACIONES FINALES CHAR(8),
+IDPROFESORES DE LAS ASIGNATURAS CHAR(8),
+IDPERIODO ENERO-ABRIL CHAR(8),
+IDPERIODO MAYO-AGOSTO CHAR(8),
+IDPERIODO SEPTIEMBRE-DICIEMBRE CHAR(8),
+CONSTRAINT FK_DATOS DE ESTUDIANTE FOREIGN KEY (IDDATOS DE ESTUDIANTE) REFERENCES (ID) DATOS DE ESTUDIANTE,
+CONSTRAINT FK_CALIFICACIONES FINALES FOREIGN KEY (IDCALIFICACIONES FINALES) REFERENCES (ID) CALIFICACIONES FINALES,
+CONSTRAINT FK_PROFESORES DE LAS ASIGNATURAS FOREIGN KEY (IDPROFESORES DE LAS ASIGNATURAS) REFERENCES (ID) PROFESORES DE LAS ASIGNATURAS, 
+CONSTRAINT FK_PERIODO ENERO-ABRIL FOREIGN KEY (IDPERIODO ENERO-ABRIL) REFERENCES (ID) PERIODO ENERO-ABRIL,
+CONSTRAINT FK_PERIODO MAYO-AGOSTO FOREIGN KEY (IDPERIODO MAYO-AGOSTO) REFERENCES (ID) PERIODO MAYO-AGOSTO,
+CONSTRAINT FK_PERIODO SEPTIEMBRE-DICIEMBRE FOREIGN KEY (IDPERIODO SEPTIEMBRE-DICIEMBRE) REFERENCES (ID) PERIODO SEPTIEMBRE-DICIEMBRE,
+
+
+
